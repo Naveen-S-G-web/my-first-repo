@@ -1,0 +1,6 @@
+git_hub session
+install vs code
+install git
+create git_hub account 
+connect git to vs code
+creaate a sample txt file
