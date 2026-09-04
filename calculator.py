@@ -1,25 +1,33 @@
-try:
-    first_number = float(input("Enter the first number: "))
-    operator = input("Enter an operation (+, -, *, /): ")
-    second_number = float(input("Enter the second number: "))
+def add(x, y):
+    return x + y
 
-    if operator == "+":
-        result = first_number + second_number
-    elif operator == "-":
-        result = first_number - second_number
-    elif operator == "*":
-        result = first_number * second_number
-    elif operator == "/":
-        if second_number == 0:
-            print("Error: Cannot divide by zero.")
-        else:
-            result = first_number / second_number
-            print("Result:", result)
-    else:
-        print("Error: Invalid operation.")
-    
-    if operator in ["+", "-", "*"]:
-        print("Result:", result)
+def subtract(x, y):
+    return x - y
 
-except ValueError:
-    print("Error: Please enter valid numbers.")
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
+
+print("Select operation:")
+print("1. Add\n2. Subtract\n3. Multiply\n4. Divide")
+
+choice = input("Enter choice (1/2/3/4): ")
+
+if choice in ('1', '2', '3', '4'):
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if choice == '1':
+        print(f"{num1} + {num2} = {add(num1, num2)}")
+    elif choice == '2':
+        print(f"{num1} - {num2} = {subtract(num1, num2)}")
+    elif choice == '3':
+        print(f"{num1} * {num2} = {multiply(num1, num2)}")
+    elif choice == '4':
+        print(f"{num1} / {num2} = {divide(num1, num2)}")
+else:
+    print("Invalid Input")
